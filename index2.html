@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <style>
+        #btn.zoom{
+        transition: 0.2s ease;
+        transform: scale(0.8);
+        }
+    </style>
+</head>
+<body class="bg-success">
+<div class="container" id="cont">
+    <form class="form-control bg-info" action="#" id="myform">
+<h3 class="d-flex align-items-center justify-content-center text-white">Fill The Information</h3><hr>
+        <label for="nameid" class="form-label" >Name: </label><br>
+        <input type="text" class="form-control" id="nameid" name="nameid" placeholder="Mr.Wick"><br>
+        <label for="emailid" class="form-label" >Email:</label><br>
+        <input type="email" class="form-control" id="emailid" name="emailid" placeholder="johnwick@Continental.com"><br>
+        <button type="submit" class="form-control border-10 border-dark" id="btn" value="Submit">Submit</button>
+    </form>
+</div>
+<script>
+    const form =  document.getElementById("myform")
+    const name1 = document.getElementById("nameid")
+    const email = document.getElementById("emailid")
+    const cont1 = document.getElementById("cont")
+    const btn1 =  document.getElementById("btn");
+    
+    cont1.addEventListener("click",(e)=>{
+        form.classList.add("bg-dark");
+    });
+
+    btn1.addEventListener("mouseover",(e)=>{
+        btn1.style.background = "red";
+        btn1.classList.add("zoom");
+    });
+    
+    btn1.addEventListener("mouseout",(e)=>{
+        btn1.style.background = "white";
+        btn1.classList.remove("zoom");
+    });
+
+    form.addEventListener("submit", (e)=>{
+        e.preventDefault();
+        if (name1.value === "" || email.value == "") {
+            alert("Please enter both");
+        }else{
+            console.log('Name:', form.nameid.value);
+            console.log('Email:', form.emailid.value);
+        }
+});
+</script>
+</body>
+</html>
