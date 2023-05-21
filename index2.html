@@ -16,9 +16,9 @@
         }
     </style>
 </head>
-<body class="bg-success">
+<body class="bg-danger">
 <div class="container" id="cont">
-    <form class="form-control bg-info" action="#" id="myform">
+    <form class="form-control bg-warning" action="#" id="myform">
 <h3 class="d-flex align-items-center justify-content-center text-white">Fill The Information</h3><hr>
         <label for="nameid" class="form-label" >Name: </label><br>
         <input type="text" class="form-control" id="nameid" name="nameid" placeholder="Mr.Wick"><br>
@@ -28,14 +28,14 @@
     </form>
 </div>
 <script>
-    const form =  document.getElementById("myform")
-    const name1 = document.getElementById("nameid")
-    const email = document.getElementById("emailid")
-    const cont1 = document.getElementById("cont")
+    const form =  document.getElementById("myform");
+    const name1 = document.getElementById("nameid");
+    const email = document.getElementById("emailid");
+    const cont1 = document.getElementById("cont");
     const btn1 =  document.getElementById("btn");
     
     cont1.addEventListener("click",(e)=>{
-        form.classList.add("bg-dark");
+        form.classList.add("bg-danger");
     });
 
     btn1.addEventListener("mouseover",(e)=>{
@@ -44,7 +44,7 @@
     });
     
     btn1.addEventListener("mouseout",(e)=>{
-        btn1.style.background = "white";
+        btn1.style.background = "white"; 
         btn1.classList.remove("zoom");
     });
 
@@ -54,8 +54,14 @@
             alert("Please enter both");
         }else{
             console.log('Name:', form.nameid.value);
-            console.log('Email:', form.emailid.value);
+            console.log('Email:', form.emailid.value);    
+            localStorage.setItem('Name:', `${form.nameid.value}`);
+            localStorage.setItem('Email:', `${form.emailid.value}`);
         }
+
+
+
+
 });
 </script>
 </body>
