@@ -53,16 +53,25 @@
         if (name1.value === "" || email.value == "") {
             alert("Please enter both");
         }else{
-            console.log('Name:', form.nameid.value);
-            console.log('Email:', form.emailid.value);    
-            localStorage.setItem('Name:', `${form.nameid.value}`);
-            localStorage.setItem('Email:', `${form.emailid.value}`);
+            console.log('Name:', name1.value);
+            console.log('Email:', email.value);    
+            localStorage.setItem('Name:', `${name1.value}`);
+            localStorage.setItem('Email:', `${email.value}`);
         }
+    });
+    // console.log(localStorage.getItem("Email:"));
 
+let myObj = {
+    name: "Rajat",
+    age: 25,
+};
 
+let myObjSerialized = JSON.stringify(myObj);
+localStorage.setItem("myobj", myObjSerialized);
 
+let myObjdeSerialized = JSON.parse(localStorage.getItem("myobj"));
+console.log(myObjdeSerialized);
 
-});
 </script>
 </body>
 </html>
